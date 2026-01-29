@@ -7,6 +7,8 @@
 
   <!-- Pixel Font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,10 +16,24 @@
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">Growtopia Hub</div>
-    <nav>
-      <a href="#scripts">Scripts</a>
-      <a href="#about">About</a>
+    
+    <nav id="navbar-links">
+      <a href="#scripts" class="nav-link">Scripts</a>
+      <a href="#about" class="nav-link">About</a>
+      <!-- Dropdown Contact -->
+      <div class="dropdown">
+        <a href="#" class="dropdown-btn nav-link">Contact</a>
+        <div id="contactDropdown" class="dropdown-content">
+          <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
     </nav>
+
+    <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <!-- Hero -->
@@ -72,7 +88,12 @@
   </section>
 
   <footer>
-    © 2026 Growtopia Hub • Made by Aleph
+    <div class="footer-content">
+      <p>© 2026 Growtopia Hub • Made by Aleph</p>
+      <div class="footer-social">
+        <a href="#" aria-label="WhatsApp Contact"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
