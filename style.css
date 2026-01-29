@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +21,7 @@ body {
   padding: 15px 30px;
   background: #0f1720;
   border-bottom: 2px solid #00ff88;
+  flex-wrap: nowrap; /* Prevent navbar items from wrapping */
 }
 
 .logo {
@@ -24,10 +29,16 @@ body {
   font-size: 14px;
 }
 
+.navbar nav {
+  display: flex; /* Make nav a flex container */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between nav links */
+}
+
 .navbar a {
   color: #eaffea;
   text-decoration: none;
-  margin-left: 20px;
+  /* margin-left: 20px; -- Replaced by gap on .navbar nav */
   font-size: 10px;
 }
 
@@ -141,3 +152,109 @@ footer {
   font-size: 8px;
   background: #05070a;
   }
+
+/* Download Links Box */
+.download-links {
+  padding: 60px 20px;
+  text-align: center;
+  background: #0f1720;
+}
+
+.download-links h2 {
+  margin-bottom: 30px;
+  color: #00ff88;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.main-link-button {
+  display: block;
+  padding: 20px;
+  background: #101820;
+  color: #00ff88;
+  border: 2px solid #00ff88;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.main-link-button:hover {
+  background: #00ff88;
+  color: #101820;
+  box-shadow: 0 0 15px #00ff88;
+  transform: translateY(-4px);
+}
+
+/* Responsive for larger screens */
+@media (min-width: 768px) {
+  .link-container {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 900px; /* Allow more space for the buttons */
+  }
+
+  .main-link-button {
+    /* By removing the fixed width, buttons will resize based on their content */
+  }
+}
+
+/* --- Animations --- */
+
+/* 1. Navbar Slide-Down Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.navbar {
+  animation: slideDown 0.7s ease-out;
+}
+
+/* 2. Hero Text Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hero h1, .hero p {
+  animation: fadeIn 1s ease-in-out 0.5s backwards;
+}
+
+/* 3. Hero Button Glow Animation */
+@keyframes subtleGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px #00ff88;
+  }
+  50% {
+    box-shadow: 0 0 25px #00ff88;
+  }
+}
+.hero button {
+  animation: subtleGlow 2.5s infinite ease-in-out;
+}
+
+/* 4. On-Scroll Fade-In Animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
