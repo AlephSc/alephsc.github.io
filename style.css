@@ -203,12 +203,27 @@ body {
   margin-bottom: 15px;
 }
 
-.card button {
-  padding: 8px;
+.card .card-button {
+  display: inline-block;
+  padding: 10px;
   width: 100%;
   border: none;
   background: #00ff88;
+  color: #101820;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-size: 10px;
+  font-family: 'Press Start 2P', cursive;
+  transition: background-color 0.3s ease;
+}
+
+.card .card-button i {
+  margin-right: 8px;
+}
+
+.card .card-button:hover {
+  background-color: #00cc6a;
 }
 
 .card:hover {
