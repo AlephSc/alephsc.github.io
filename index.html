@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Growtopia Script Hub</title>
 
-  <!-- Pixel Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Optimized CSS Loading -->
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"></noscript>
+  
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
   <!-- Favicon -->
   <link rel="icon" href="https://www.vhv.rs/dpng/d/406-4061862_growtopia-wiki-growtopia-logo-png-transparent-png.png" type="image/png">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,11 +37,14 @@
       </div>
     </nav>
 
-    <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="header-icons">
+      <a href="#" class="whatsapp-header-icon" aria-label="WhatsApp Contact"><i class="fab fa-whatsapp"></i></a>
+      <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
   <!-- Hero -->
@@ -50,8 +59,8 @@
     <h2>Get Started</h2>
     <div class="link-container">
       <a href="https://www.ubisoft.com/en-us/game/growtopia" class="main-link-button">Download Growtopia</a>
-      <a href="https://www.mediafire.com/file/nii5vs6sl13stvf/GrowLauncher+v6.1.45.apk/file" class="main-link-button">Download Growlauncher</a>
-      <a href="#scripts" class="main-link-button">Get Script</a>
+      <a href="#" class="main-link-button">Download Growlauncher</a>
+      <a href="#" class="main-link-button">Get Script</a>
     </div>
   </section>
 
@@ -61,9 +70,21 @@
 
     <div class="card-container">
       <div class="card">
-        <h3>Script Menu</h3>
-        <p>All in one script menu</p>
-        <a href="https://www.mediafire.com/file/03r8we8ylreymib/All-In-One.lua/file" class="card-button"><i class="fas fa-download"></i> Download</a>
+        <h3>Auto Farm</h3>
+        <p>Automatic farming script with smart pathing.</p>
+        <a href="#" class="card-button"><i class="fas fa-download"></i> Download</a>
+      </div>
+
+      <div class="card">
+        <h3>World Scanner</h3>
+        <p>Scan worlds for valuable blocks instantly.</p>
+        <a href="#" class="card-button"><i class="fas fa-download"></i> Download</a>
+      </div>
+
+      <div class="card">
+        <h3>Spam Chat</h3>
+        <p>Advanced spam & macro chat system.</p>
+        <a href="#" class="card-button"><i class="fas fa-download"></i> Download</a>
       </div>
     </div>
   </section>
@@ -80,12 +101,10 @@
   <footer>
     <div class="footer-content">
       <p>© 2026 Growtopia Hub • Made by Aleph</p>
-      <div class="footer-social">
-        <a href="#" aria-label="WhatsApp Contact"><i class="fab fa-whatsapp"></i></a>
-      </div>
+    の部分を削除し、代わりに以下の内容を挿入します。
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
