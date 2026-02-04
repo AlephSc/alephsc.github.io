@@ -78,16 +78,26 @@ hiddenElements.forEach((el) => observer.observe(el));
 // --- AUTO-HIDE STICKY HEADER ---
 let lastScrollY = window.scrollY;
 const navbar = document.querySelector('.navbar');
+let scrollTicking = false;
 
 window.addEventListener('scroll', () => {
-  if (lastScrollY < window.scrollY && window.scrollY > 100) {
-    // Scrolling down & past a certain point
-    navbar.classList.add('navbar--hidden');
-  } else {
-    // Scrolling up
-    navbar.classList.remove('navbar--hidden');
+  if (scrollTicking) {
+    return;
   }
 
-  lastScrollY = window.scrollY;
-});
+  scrollTicking = true;
+  window.requestAnimationFrame(() => {
+    const currentScrollY = window.scrollY;
 
+    if (lastScrollY < currentScrollY && currentScrollY > 100) {
+      // Scrolling down & past a certain point
+      navbar.classList.add('navbar--hidden');
+    } else {
+      // Scrolling up
+      navbar.classList.remove('navbar--hidden');
+    }
+
+    lastScrollY = currentScrollY;
+    scrollTicking = false;
+  });
+}, { passive: true });
